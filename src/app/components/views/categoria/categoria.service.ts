@@ -6,13 +6,17 @@ import { environment } from 'src/environments/environment';
 import { Categoria } from './categoria.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class CategoriaService {
-
   baseUrl: string = environment.baseUrl;
 
-  constructor(private http: HttpClient, private _snack: MatSnackBar) { }
+  constructor(private http: HttpClient, private _snack: MatSnackBar) {}
+
+  findById(id: string): Observable<Categoria> {
+    const url = `${this.baseUrl}/categorias/${id}`;
+    return this.http.get<Categoria>(url);
+  }
 
   findAll(): Observable<Categoria[]> {
     const url = `${this.baseUrl}/categorias`;
@@ -22,6 +26,11 @@ export class CategoriaService {
   create(categoria: Categoria): Observable<Categoria> {
     const url = `${this.baseUrl}/categorias`;
     return this.http.post<Categoria>(url, categoria);
+  }
+
+  delete(id: string): Observable<void> {
+    const url = `${this.baseUrl}/categorias/${id}`;
+    return this.http.delete<void>(url);
   }
 
   mensagem(str: string): void {

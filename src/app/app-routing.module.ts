@@ -1,3 +1,4 @@
+import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
 import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "categorias/create",
     component: CategoriaCreateComponent
+  },
+  {
+    path: "categorias/delete/:id",
+    component: CategoriaDeleteComponent
   }
 ];
 
