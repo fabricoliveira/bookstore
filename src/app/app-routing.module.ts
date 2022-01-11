@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { LivroReadAllComponent } from './components/views/livro/livro-read-all/livro-read-all.component';
+import { LivroReadComponent } from './components/views/livro/livro-read/livro-read.component';
 
 const routes: Routes = [
   {
@@ -18,36 +19,40 @@ const routes: Routes = [
   },
   {
     path: "categorias",
-    component: CategoriaReadComponent
+    component: CategoriaReadComponent,
   },
   {
     path: "categorias/create",
-    component: CategoriaCreateComponent
+    component: CategoriaCreateComponent,
   },
   {
     path: "categorias/delete/:id",
-    component: CategoriaDeleteComponent
+    component: CategoriaDeleteComponent,
   },
   {
     path: "categorias/update/:id",
-    component: CategoriaUpdateComponent
+    component: CategoriaUpdateComponent,
   },
   {
     path: "categorias/:id_categoria/livros",
-    component: LivroReadAllComponent
+    component: LivroReadAllComponent,
   },
   {
     path: "categorias/:id_categoria/livros/create",
-    component: LivroCreateComponent
+    component: LivroCreateComponent,
   },
   {
     path: "categorias/:id_categoria/livros/:id_livro/update",
-    component: LivroUpdateComponent
+    component: LivroUpdateComponent,
   },
   {
     path: "categorias/:id_categoria/livros/:id_livro/delete",
-    component: LivroDeleteComponent
-  }
+    component: LivroDeleteComponent,
+  },
+  {
+    path: "categorias/:id_categoria/livros/:id_livro/read",
+    component: LivroReadComponent,
+  },
 ];
 
 @NgModule({
